@@ -1,48 +1,61 @@
-import { useState } from 'react'
-import './MindMapStepper.css'
-import { Col, Container, Row } from 'react-bootstrap'
+import { useState } from "react";
+import "./MindMapStepper.css";
+import { Col, Container, Row } from "react-bootstrap";
 
-import { useForm } from 'react-hook-form'
-import ethereum from './images/ethereum.png'
-import add from './images/plus.png'
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import top_blue from './images/top_blue.png'
-import left_blue from './images/left_blue.png'
-import right_red from './images/right_red.png'
+import { useForm } from "react-hook-form";
+import ethereum from "./images/ethereum.png";
+import add from "./images/plus.png";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import top_blue from "./images/top_blue.png";
+import left_blue from "./images/left_blue.png";
+import right_red from "./images/right_red.png";
 
 const MindMapStepper = () => {
+  const [inputList, setInputList] = useState([
+    { milestoneTitle: "", description: "" },
+  ]);
+  const handleAdd = () => {
+    setInputList([...inputList, { milestoneTitle: "", description: "" }]);
+  };
+  const handleinputChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...inputList];
+    list[index][name] = value;
+    setInputList(list);
+  };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
-  }
+    console.log(data);
+  };
 
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    email: '',
-    pass: '',
-    cpass: '',
-    fname: '',
-    lname: '',
-    phone: '',
-    address: '',
-    twitter: '',
-    facebook: '',
-    gplus: '',
-  })
+    email: "",
+    pass: "",
+    cpass: "",
+    fname: "",
+    lname: "",
+    phone: "",
+    address: "",
+    twitter: "",
+    facebook: "",
+    gplus: "",
+  });
 
   const handleNext = () => {
-    if (step < 3) setStep(step + 1)
-  }
+    if (step < 3) setStep(step + 1);
+  };
 
   const handlePrevious = () => {
-    if (step > 1) setStep(step - 1)
-  }
+    if (step > 1) setStep(step - 1);
+  };
 
   // const handleChange = (e) => {
   //     const { name, value } = e.target;
@@ -62,13 +75,13 @@ const MindMapStepper = () => {
       <div className='padding'>
         <div className='multistepsform container'>
           <ul id='progressbar'>
-            <li className={step === 1 ? 'active' : step > 1 ? 'completed' : ''}>
+            <li className={step === 1 ? "active" : step > 1 ? "completed" : ""}>
               Enter your milestone details
             </li>
-            <li className={step === 2 ? 'active' : step > 2 ? 'completed' : ''}>
-            Connect Wallet
+            <li className={step === 2 ? "active" : step > 2 ? "completed" : ""}>
+              Connect Wallet
             </li>
-            <li className={step === 3 ? 'active' : step > 3 ? 'completed' : ''}>
+            <li className={step === 3 ? "active" : step > 3 ? "completed" : ""}>
               Sign
             </li>
           </ul>
@@ -83,14 +96,14 @@ const MindMapStepper = () => {
                         <input
                           type='text'
                           placeholder='Name'
-                          {...register('Name')}
+                          {...register("Name")}
                         />
                       </div>
                     </Col>
                     <Col xl={6}>
                       <div className='form-group'>
                         <label htmlFor=''>Roadmap Type</label>
-                        <select {...register('gender')}>
+                        <select {...register("gender")}>
                           <option value='mind map'>Mind Map</option>
                           <option value='gantt'>Gantt</option>
                           <option value='timeline'>Timeline</option>
@@ -103,22 +116,8 @@ const MindMapStepper = () => {
                         <label htmlFor=''>MIlestone Title</label>
                         <input
                           type='text'
-                          placeholder='Milestone 1'
-                          {...register('Title', { required: true })}
-                        />
-                      </div>
-                      <div className='form-group'>
-                        <input
-                          type='text'
-                          placeholder='Milestone 2'
-                          {...register('Title', { required: true })}
-                        />
-                      </div>
-                      <div className='form-group'>
-                        <input
-                          type='text'
-                          placeholder='Milestone 3'
-                          {...register('Title', { required: true })}
+                          placeholder='Milestone Title'
+                          {...register("Title", { required: true })}
                         />
                       </div>
                     </Col>
@@ -129,24 +128,58 @@ const MindMapStepper = () => {
                         <input
                           type='text'
                           placeholder='Description'
-                          {...register('Description', { required: true })}
-                        />
-                      </div>
-                      <div className='form-group'>
-                        <input
-                          type='text'
-                          placeholder='Description'
-                          {...register('Description', { required: true })}
-                        />
-                      </div>
-                      <div className='form-group'>
-                        <input
-                          type='text'
-                          placeholder='Description'
-                          {...register('Description', { required: true })}
+                          {...register("Description", { required: true })}
                         />
                       </div>
                     </Col>
+                    <Col xl={6}>
+                      <div className='form-group'>
+                        <input
+                          type='text'
+                          placeholder='Milestone Title'
+                          {...register("Title", { required: true })}
+                        />
+                      </div>
+                    </Col>
+
+                    <Col xl={6}>
+                      <div className='form-group'>
+                        <input
+                          type='text'
+                          placeholder='Description'
+                          {...register("Description", { required: true })}
+                        />
+                      </div>
+                    </Col>
+                    {inputList.map((x, i) => {
+                      return (
+                        <>
+                          <Col xl={6}>
+                            <div className='form-group'>
+                              <input
+                                type='text'
+                                name='milestoneTitle'
+                                placeholder='Milestone Title '
+                                onChange={(e) => handleinputChange(e, i)}
+                                {...register("Title", { required: true })}
+                              />
+                            </div>
+                          </Col>
+
+                          <Col xl={6}>
+                            <div className='form-group'>
+                              <input
+                                type='text'
+                                name='description'
+                                placeholder='Description'
+                                onChange={(e) => handleinputChange(e, i)}
+                                {...register("Description", { required: true })}
+                              />
+                            </div>
+                          </Col>
+                        </>
+                      );
+                    })}
                   </Row>
                 </Container>
 
@@ -160,7 +193,12 @@ const MindMapStepper = () => {
                       <FiChevronLeft></FiChevronLeft> Previous
                     </button>
                   </Link>
-                  <img className='cursor-pointer' src={add} alt='' />
+                  <img
+                    onClick={handleAdd}
+                    className='cursor-pointer'
+                    src={add}
+                    alt=''
+                  />
                   <button
                     type='button'
                     className='next action-button'
@@ -231,7 +269,7 @@ const MindMapStepper = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MindMapStepper
+export default MindMapStepper;

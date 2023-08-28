@@ -1,45 +1,52 @@
-import { useState } from 'react'
-import './TimelineStepper.css'
-import { Col, Container, Row } from 'react-bootstrap'
+import { useState } from "react";
+import "./TimelineStepper.css";
+import { Col, Container, Row } from "react-bootstrap";
 
-import { useForm } from 'react-hook-form'
-import ethereum from './images/ethereum.png'
-import add from './images/plus.png'
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import { TiTick } from 'react-icons/ti'
-import { Link } from 'react-router-dom'
-import top_blue from './images/top_blue.png'
-import left_blue from './images/left_blue.png'
-import right_red from './images/right_red.png'
+import { useForm } from "react-hook-form";
+import ethereum from "./images/ethereum.png";
+import add from "./images/plus.png";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { TiTick } from "react-icons/ti";
+import { Link } from "react-router-dom";
+import top_blue from "./images/top_blue.png";
+import left_blue from "./images/left_blue.png";
+import right_red from "./images/right_red.png";
 
 const MultiStepForm = () => {
-  const [inputList, setInputList] = useState([{ milestoneTitle: '', targetDate: '', description: '' }]);
-  const handleAdd = () => { setInputList([...inputList, { milestoneTitle: '', targetDate: '', description: '' }]); }
+  const [inputList, setInputList] = useState([
+    { milestoneTitle: "", targetDate: "", description: "" },
+  ]);
+  const handleAdd = () => {
+    setInputList([
+      ...inputList,
+      { milestoneTitle: "", targetDate: "", description: "" },
+    ]);
+  };
   const handleinputChange = (e, index) => {
     const { name, value } = e.target;
-    const list = [...inputList]
+    const list = [...inputList];
     list[index][name] = value;
-    setInputList(list)
-  }
+    setInputList(list);
+  };
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
-  }
+    console.log(data);
+  };
 
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(1);
 
   const handleNext = () => {
-    if (step < 3) setStep(step + 1)
-  }
+    if (step < 3) setStep(step + 1);
+  };
 
   const handlePrevious = () => {
-    if (step > 1) setStep(step - 1)
-  }
+    if (step > 1) setStep(step - 1);
+  };
 
   return (
     <div className='bg_img'>
@@ -49,13 +56,13 @@ const MultiStepForm = () => {
       <div className='padding container'>
         <div className='multistepsform container'>
           <ul id='progressbar'>
-            <li className={step === 1 ? 'active' : step > 1 ? 'completed' : ''}>
+            <li className={step === 1 ? "active" : step > 1 ? "completed" : ""}>
               Enter your milestone details
             </li>
-            <li className={step === 2 ? 'active' : step > 2 ? 'completed' : ''}>
+            <li className={step === 2 ? "active" : step > 2 ? "completed" : ""}>
               Connect Wallet
             </li>
-            <li className={step === 3 ? 'active' : step > 3 ? 'completed' : ''}>
+            <li className={step === 3 ? "active" : step > 3 ? "completed" : ""}>
               Sign
             </li>
           </ul>
@@ -70,65 +77,62 @@ const MultiStepForm = () => {
                         <input
                           type='text'
                           placeholder='Name'
-                          {...register('Name')}
+                          {...register("Name")}
                         />
                       </div>
                     </Col>
                     <Col xl={6} lg={6}>
                       <div className='form-group'>
                         <label htmlFor=''>Roadmap Type</label>
-                        <select {...register('gender')}>
+                        <select {...register("gender")}>
                           <option value='timeline'>Timeline</option>
                           <option value='gantt'>Gantt</option>
                           <option value='mind map'>Mind Map</option>
                         </select>
                       </div>
                     </Col>
-                    {
-                      inputList.map((x, i) => {
-                        return (
-                          <>
-                            <Col xl={12} lg={12}>
-                              <div className='form-group'>
-                                <label htmlFor=''>MIlestone Title</label>
-                                <input
-                                  type='text'
-                                  name='milestoneTitle'
-                                  placeholder='Milestone 1'
-                                  onChange={e => handleinputChange(e, i)}
-                                  {...register('Title', { required: true })}
-                                />
-                              </div>
-                            </Col>
-                            <Col xl={6} lg={6}>
-                              <div className='form-group'>
-                                <label htmlFor=''>Target Date</label>
-                                <input
-                                  type='text'
-                                  name='targetDate'
-                                  placeholder='-----'
-                                  onChange={e => handleinputChange(e, i)}
-                                  {...register('Date', { required: true })}
-                                />
-                              </div>
-                            </Col>
-                            <Col xl={6} lg={6}>
-                              <div className='form-group'>
-                                <label htmlFor=''>MIlestone Description</label>
-                                <input
-                                  type='text'
-                                  name='description'
-                                  placeholder='Description'
-                                  onChange={e => handleinputChange(e, i)}
-                                  {...register('Description', { required: true })}
-                                />
-                              </div>
-                            </Col>
-                          </>
-                        )
-                      })
-                    }
-
+                    {inputList.map((x, i) => {
+                      return (
+                        <>
+                          <Col xl={12} lg={12}>
+                            <div className='form-group'>
+                              <label htmlFor=''>MIlestone Title</label>
+                              <input
+                                type='text'
+                                name='milestoneTitle'
+                                placeholder='Milestone '
+                                onChange={(e) => handleinputChange(e, i)}
+                                {...register("Title", { required: true })}
+                              />
+                            </div>
+                          </Col>
+                          <Col xl={6} lg={6}>
+                            <div className='form-group'>
+                              <label htmlFor=''>Target Date</label>
+                              <input
+                                type='text'
+                                name='targetDate'
+                                placeholder='-----'
+                                onChange={(e) => handleinputChange(e, i)}
+                                {...register("Date", { required: true })}
+                              />
+                            </div>
+                          </Col>
+                          <Col xl={6} lg={6}>
+                            <div className='form-group'>
+                              <label htmlFor=''>MIlestone Description</label>
+                              <input
+                                type='text'
+                                name='description'
+                                placeholder='Description'
+                                onChange={(e) => handleinputChange(e, i)}
+                                {...register("Description", { required: true })}
+                              />
+                            </div>
+                          </Col>
+                        </>
+                      );
+                    })}
                   </Row>
                 </Container>
 
@@ -142,7 +146,12 @@ const MultiStepForm = () => {
                       <FiChevronLeft></FiChevronLeft> Previous
                     </button>
                   </Link>
-                  <img onClick={handleAdd} className='cursor-pointer' src={add} alt='' />
+                  <img
+                    onClick={handleAdd}
+                    className='cursor-pointer'
+                    src={add}
+                    alt=''
+                  />
                   <button
                     type='button'
                     className='next action-button'
@@ -213,7 +222,7 @@ const MultiStepForm = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MultiStepForm
+export default MultiStepForm;
