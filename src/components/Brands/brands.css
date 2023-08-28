@@ -1,0 +1,21 @@
+.brand-item {
+  text-align: center;
+}
+
+section.brand-section {
+  margin-top: 140px;
+}
+
+@media screen and (max-width:767px) {
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  .section-title h3 {
+      font-size: 25px;
+  }
+
+  section.brand-section {
+      margin-top: 50px;
+  }
+}

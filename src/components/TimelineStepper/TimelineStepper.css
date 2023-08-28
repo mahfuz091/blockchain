@@ -1,0 +1,381 @@
+/* MultiStepForm.css */
+html {
+    height: 100%;
+}
+
+.bg_img {
+    position: relative;
+    margin-bottom: 200px;
+}
+
+.top_blue {
+    width: 80%;
+    position: absolute;
+    left: -15%;
+    top: 0;
+    z-index: -1;
+}
+
+.left_blue {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.right_red {
+    position: absolute;
+    right: 0;
+    bottom: -20%!important;
+    z-index: -1;
+}
+
+.padding {
+
+    padding-top: 200px;
+}
+
+.multistepsform {
+    position: relative;
+    padding: 61px 0;
+    border-radius: 30px;
+    background: rgba(217, 217, 217, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.multistepsform fieldset {
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: none !important;
+    /* padding: 20px 30px; */
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+}
+
+.multistepsform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+.multistepsform input,
+.multistepsform textarea {
+    border-radius: 7.655px;
+    border: 1.531px solid rgba(232, 233, 234, 0.10);
+    background: rgba(246, 246, 246, 0.05);
+    padding: 19px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #949CA9;
+    font-size: 18px;
+}
+
+.multistepsform select {
+    border-radius: 7.655px;
+    border: 1.531px solid rgba(232, 233, 234, 0.10);
+    background: rgba(246, 246, 246, 0.05);
+    padding: 19px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #949CA9;
+    font-size: 18px;
+}
+
+.multistepsform input:focus {
+    border-color: #679b9b;
+    outline: none;
+    color: #637373;
+}
+
+.multistepsform .action-button {
+    background: linear-gradient(93deg, #2950B8 0%, #B30ACE 99.48%);
+    color: white;
+    font-weight: bold;
+    color: #fff;
+    transition: 150ms;
+    border: 0 none;
+    border-radius: 16px;
+    cursor: pointer;
+    padding: 23px 45px;
+}
+
+/* .multistepsform .action-button:hover,
+.multistepsform .action-button:focus {
+    box-shadow: 0 0 0 2px #f08a5d, 0 0 0 3px #ff976;
+    color: #fff;
+} */
+
+
+.multistepsform #progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+    padding: 0 182px;
+    text-align: center;
+
+}
+
+.multistepsform #progressbar li {
+    list-style-type: none;
+    color: white;
+    text-transform: capitalize;
+    font-size: 20px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+}
+
+.multistepsform #progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 58px;
+    height: 58px;
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 100%;
+    margin: 0 auto 5px auto;
+}
+
+.multistepsform #progressbar li:after {
+    content: "";
+    width: 70%;
+    height: 7px;
+    background: white;
+    position: absolute;
+    left: -35%;
+    top: 26px;
+    z-index: -1;
+    border-radius: 100px;
+}
+
+.multistepsform #progressbar li:first-child:after {
+    content: none;
+}
+
+.multistepsform #progressbar li.active {
+    color: white;
+}
+
+.multistepsform #progressbar li.active:before {
+    background: linear-gradient(93deg, #2950B8 0%, #B30ACE 99.48%);
+    color: white;
+    border: none;
+}
+
+.multistepsform #progressbar li.active:after {
+    background-color: #2950B8;
+    color: white;
+    border: none;
+}
+
+
+.multistepsform label {
+    text-align: left;
+    margin-bottom: 8px!important;
+}
+
+.ethereum {
+    padding: 90px 0!important;
+    cursor: pointer;
+    width: 537px;
+    margin: auto;
+}
+
+.ethereum-sign {
+    padding: 90px 0!important;
+    cursor: pointer;
+    width: 260px;
+    margin: auto;
+}
+
+.etherum-bg {
+    border-radius: 18.529px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 33px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+
+/* Add this style to highlight the active step */
+.multistepsform #progressbar li.active:before {
+    background: linear-gradient(93deg, #2950B8 0%, #B30ACE 99.48%);
+    color: white;
+    border: none;
+}
+
+/* Add this style to highlight the completed steps */
+.multistepsform #progressbar li.completed:before {
+    background: linear-gradient(93deg, #2950B8 0%, #B30ACE 99.48%);
+    color: white;
+    border: none;
+}
+
+/* Add this style to highlight the progress bar for completed steps */
+.multistepsform #progressbar li.completed:after {
+    background-color: #2950B8;
+    color: white;
+    border: none;
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+
+@media(max-width: 1199px) {
+    .multistepsform #progressbar li {
+        font-size: 18px !important;
+    }
+    .multistepsform #progressbar {
+        padding: 0 35px!important;
+    }
+}
+
+@media (max-width: 991px) {
+    .roadmap-type {
+        margin-bottom: 0px;
+    }
+
+    .multistepsform #progressbar li:before {
+        border: none !important;
+    }
+
+    .multistepsform #progressbar li.active:before {
+        background: none !important;
+        color: white;
+        border: none;
+    }
+
+    .multistepsform #progressbar li {
+        font-size: 16px !important;
+    }
+
+    .multistepsform input,
+    .multistepsform textarea {
+        border-radius: 7.655px;
+        border: 1.531px solid rgba(232, 233, 234, 0.10);
+        background: rgba(246, 246, 246, 0.05);
+        padding: 19px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #949CA9;
+        font-size: 18px;
+    }
+    .padding {
+        padding-top: 115px!important;
+    }
+}
+
+@media (max-width: 768px) {
+    .multistepsform {
+        padding: 30px!important;
+    }
+    .multistepsform #progressbar li {
+        font-size: 10px !important;
+    }
+    .multistepsform .action-button {
+        padding: 10px 20px !important;
+        font-size: 14px;
+    }
+    .multistepsform #progressbar li:after {
+        background: none!important;
+    }
+
+    ul#progressbar {
+        display: none;
+    }
+
+    .left_blue {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        top: 50% !important;
+    }
+
+    .right_red {
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        bottom: 20%;
+    }
+
+    .ethereum {
+        padding: 190px 0;
+        cursor: pointer;
+        width: 250px !important;
+        margin: auto;
+    }
+
+    .etherum-bg {
+        padding: 15px 5px !important;
+    }
+
+    .ethereum h2 {
+        cursor: pointer;
+        font-size: 15px !important;
+        margin: auto;
+    }
+
+    .etherum-bg h2 {
+        padding: 15px 0;
+        font-size: 20px;
+    }
+
+    .multistepsform #progressbar {
+        margin-bottom: 30px;
+        overflow: hidden;
+        counter-reset: step;
+        padding: 0 30px!important;
+        text-align: center;
+    
+    }
+    .timelineroadmap-title-wrap {
+        display: flex!important;
+        flex-direction: column;
+        text-align: center;
+    }
+    .timelineroadmap-title-wrap {
+        margin-bottom: 0!important;
+    }
+    .timelineroadmap-title-wrap h3 {
+        margin-bottom: 20px;
+    }
+    .timelineroadmap-box-wrap {
+        padding-bottom: 50px!important;
+    }
+    .searchBox {
+        margin-bottom: 50px!important;
+    }
+
+    .etherum-bg {
+        padding: 14px 20px!important;
+      }
+      
+      .etherum-bg h2 {
+        line-height: 1.8;
+      }
+}
+
+@media (max-width: 540px) {
+
+    .multistepsform fieldset {
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: none !important;
+        /* padding: 20px 30px; */
+        box-sizing: border-box;
+        width: 100%!important;
+        margin: 0 0!important;
+        position: relative;
+    }
+}
+

@@ -1,0 +1,156 @@
+.how-item-one {
+    background: url(./step-bg1.png) center no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    padding: 50px;
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.how-item-two {
+    background: url(./step-bg2.png) center no-repeat;
+    background-size: cover;
+    padding: 40px;
+}
+
+.how-item-three {
+    background: url(./step-bg3.png) center no-repeat;
+    background-size: cover;
+    padding: 40px;
+}
+
+.how-item.how-item-one img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 0 30px 30px 0;
+    width: 52%;
+    object-fit: cover;
+}
+
+.how-item h3 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.how-item .button-border {
+    margin-bottom: 15px;
+    padding: 8px 20px;
+}
+
+.how-item p {
+    font-size: 18px;
+    color: #C2C2C2;
+}
+
+.how-item-one-inner {
+    width: 45%;
+}
+
+.how-item {
+    border: 1px solid #6D7170;
+    border-radius: 30px;
+    height: 100%;
+}
+
+.how-item-two-inner img {
+    margin-bottom: 30px;
+}
+
+.how-item-three-content {
+    margin-bottom: 50px;
+}
+
+
+.how-it-works {
+    position: relative;
+    z-index: 1;
+}
+
+.step-shape1 {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.step-shape2 {
+    position: absolute;
+    top: 60%;
+    z-index: -1;
+}
+
+.step-shape3 {
+    position: absolute;
+    top: 60%;
+    right: 0;
+    z-index: -1;
+}
+
+
+@media screen and (max-width:991px) {
+    section.service-section {
+        margin-bottom: 50px;
+    }
+    
+    .section-title {
+        margin-bottom: 30px;
+    }
+    
+    .how-item.how-item-one .desktop-image {
+        display: none;
+    }
+    
+    .how-item-one-inner {
+        width: 100%;
+    }
+    
+    .how-item {
+        padding: 20px;
+        height: auto;
+    }
+    
+    .how-item {
+        margin-bottom: 0;
+    }
+    .how-item-two-inner img {
+        width: 100%;
+    }
+    .how-item.how-item-one img {
+        position: relative;
+    }
+    
+    .how-item-two-inner {display: flex;flex-direction: column;}
+    
+    .how-item-two-inner img {
+        order: 2;
+        margin-bottom: 0;
+    }
+    
+    .how-item-two-content {
+        text-align: center;
+    }
+    
+    .how-item h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .how-item h3 br {
+        display: none;
+    }
+    
+    .how-item p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .how-item-three-content {
+        text-align: center;
+    }
+    
+    .how-item-one-inner {
+        text-align: center;
+    }
+}

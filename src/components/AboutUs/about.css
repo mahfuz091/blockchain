@@ -1,0 +1,101 @@
+section.about-us {
+  position: relative;
+  z-index: 1;
+  margin: 140px 0;
+}
+
+.about-us .blue-shape {
+  top: 50%;
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.about-us .purple-shape {
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.about-content h2 {
+  font-size: 48px;
+}
+
+.about-content p {
+  font-size: 18px;
+  color: #ddd;
+  line-height: 1.8;
+  margin: 25px 0;
+}
+
+a.primary-btn {
+  border-radius: 12px;
+  background: linear-gradient(93deg, #2950B8 0%, #B30ACE 99.48%);
+  color: #fff;
+  font-size: 18px;
+  display: inline-block;
+  padding: 20px 40px;
+  border: none;
+}
+
+.about-thumbnail img {
+  width: 100%;
+}
+
+.about-content {
+  margin-left: 30px;
+}
+
+a.button-border {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 1000px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px 26px;
+  display: inline-block;
+}
+
+a.primary-btn {
+  box-shadow: 0 0 20px #9800ff;
+}
+
+
+
+a.button-border svg {
+  margin-bottom: 3px;
+  margin-left: 8px;
+}
+.about-content .button-border {
+  margin-bottom: 30px;
+}
+
+.about-content h2 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width:1199px) {
+  .about-content h2 {
+      font-size: 35px;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .about-content {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  section.about-us {
+      margin: 80px 0;
+      margin-top: 30px;
+  }
+  .about-content {
+      text-align: center;
+  }
+  
+}

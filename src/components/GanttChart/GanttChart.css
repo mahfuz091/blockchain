@@ -1,0 +1,204 @@
+.ganttChart {
+    padding-top: 100px;
+    /* margin-bottom: 239px; */
+}
+
+.ganttChart-box-wrap {
+    border-radius: 30px;
+    background: rgba(217, 217, 217, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid #454248;
+}
+
+.ganttChart-title-wrap {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    padding: 40px;
+}
+
+.chart_body{
+    margin-left: 103px;
+}
+
+.chart_top{
+    margin-left: 150px;
+    margin-bottom: 27px;
+    border-bottom: 1px solid #ffffff1a;
+}
+
+.chart_top p{
+    margin-right: 50px;
+}
+
+.chart_leftSide{
+    position: relative;
+}
+
+.chart_leftSide h6{
+    margin-bottom: 60px;
+}
+
+.chart_one{
+    position: absolute;
+    top: 28%;
+    left: 20%;
+}
+.chart_two{
+    position: absolute;
+    top: 40%;
+    left: 35%;
+}
+.chart_three{
+    position: absolute;
+    top: 51%;
+    left: 52%;
+}
+.chart_four{
+    position: absolute;
+    top: 63%;
+    left: 25%;
+}
+.chart_five{
+    position: absolute;
+    top: 75%;
+    left: 72%;
+}
+.chart_six{
+    position: absolute;
+    top: 87%;
+    left: 83%;
+}
+
+.chart_RightSide img{
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1399px){
+    .chart_top p{
+        margin-right: 30px;
+    }
+    .chart_one{
+        position: absolute;
+        top: 28%;
+        left: 22%;
+    }
+}
+
+@media (max-width: 1199px){
+    .chart_top p{
+        margin-right: 0;
+    }
+    .chart_leftSide h6{
+        font-size: 14px;
+    }
+    .chart_one{
+        width: 200px;
+        top: 29%;
+        left: 27%;
+    }
+    .chart_four{
+        width: 550px;
+        top: 64%;
+        left: 40%;
+    }
+}
+@media (max-width: 991px){
+    .chart_top{
+        margin-left: 100px;
+    }
+    .chart_top p{
+     font-size: 10px;
+    }
+    .chart_body{
+        margin-left: 30px;
+    }
+    .chart_leftSide h6{
+        font-size: 14px;
+    }
+    .chart_one{
+        width: 200px;
+        top: 28%;
+        left: 22%;
+    }
+    .chart_four{
+        width: 450px;
+        top: 63%;
+        left: 30%;
+    }
+    .chart_five{
+        position: absolute;
+        top: 75%;
+        left: 60%;
+    }
+}
+@media (max-width: 768px){
+    .chart_top{
+        margin-left: 100px;
+    }
+    .chart_top p{
+     font-size: 8px;
+    }
+    .chart_body{
+        margin-left: 30px;
+    }
+    .chart_leftSide h6{
+        font-size: 10px;
+    }
+    .chart_one{
+        width: 150px;
+        top: 34%;
+        left: 25%;
+    }
+    .chart_two{
+        width: 250px;
+        top: 45%;
+        left: 44%;
+    }
+    .chart_three{
+        width: 200px;
+        top: 55%;
+        left: 55%;
+    }
+    .chart_four{
+        width: 320px;
+        top: 67%;
+        left: 35%;
+    }
+    .chart_five{
+        position: absolute;
+        top: 75%;
+        left: 50%;
+    }
+    .ganttChart-title-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .ganttChart-title-wrap h3 {
+        margin-bottom: 20px;
+    }
+    .ganttChart-box-wrap {
+        overflow-x: scroll;
+    }
+    
+    .ganttChart {
+        padding-bottom: 150px;
+    }
+}
+
+@media (max-width: 540px){
+    
+}
+@media (max-width: 500px){
+
+}
+@media (max-width: 425px){
+    .chart_one{
+        left: 30%;
+    }
+    .chart_four{
+        left: 40%;
+    }
+}

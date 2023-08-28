@@ -1,0 +1,64 @@
+.mindmap-section {
+    position: relative;
+    z-index: 2;
+    padding: 120px 0;
+}
+
+/* Set the default styles for the image */
+.image-container img {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .image-container img {
+    transition: transform 0.3s ease; /* Define the transition property and duration */
+  }
+  
+  /* Add the hover effect */
+
+  .mindMap_backgroundImage{
+    position: relative;
+  }
+
+  /* .bg_blue_left{
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    top: -70%;
+  } */
+  .bg_blue_right{
+    position: absolute;
+    right: 0;
+    top: -60%;
+  }
+  .bg_Radient{
+    position: absolute;
+    /* left: 22%; */
+    bottom: -40%;
+    z-index: -1;
+  }
+
+  .gaph{
+    gap: 24px;
+  }
+
+  .gaph img{
+    margin-bottom: 24px;
+  }
+
+  .image-container:hover img {background-image: linear-gradient(90deg, #264DB5, #B40CD1);}
+
+.image-container img {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+  @media (max-width: 991px){
+    .gaph{
+      gap: 10px;
+    }
+    .gaph img{
+      margin-bottom: 10px;
+    }
+  }

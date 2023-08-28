@@ -1,0 +1,53 @@
+.header-area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.header-area nav {
+  background-color: transparent!important;
+}
+
+.navbar-nav a {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 35px;
+}
+
+.navbar-toggler-icon {
+  background-image: url('./menu-icon.svg');
+}
+
+@media screen and (max-width:991px) {
+  header a.primary-btn {
+      display: none;
+  }
+  .navbar-toggler {
+      padding: 0;
+      border: none;
+  }
+
+  .navbar-toggler-icon {
+      width: 32px!important;
+      height: 32px!important;
+  }
+
+  header.header-area {
+      background-color: #131A2D;
+  }
+
+  .navbar-nav a {
+      margin: 0;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  .navbar-nav {
+      margin-top: 30px;
+  }
+  a.navbar-brand img {
+      max-width: 145px;
+  }
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  line-height: 1.6;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #DDDDDD;
+  background: var(--black-shades-1, #0E0E10);
+}
+
+html {
+  scroll-behavior: smooth; 
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600; 
+}
+
+h1 {
+  font-size: 42px; 
+}
+
+h2 {
+  font-size: 36px; 
+}
+
+h3 {
+  font-size: 30px; 
+}
+
+h4 {
+  font-size: 24px; 
+}
+
+h5 {
+  font-size: 18px; 
+}
+
+h6 {
+  font-size: 16px; 
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; 
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  outline: none; 
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none; 
+}
+
+.slick-slide:focus {
+  outline: none;
+  box-shadow: none; 
+}
+
+.slick-slide img {
+  display: inline-block !important; 
+}
+
+input:focus,
+textarea:focus {
+  outline: none; 
+}
+
+textarea {
+  height: 120px;
+  resize: none; 
+}
+
+button {
+  border: none; 
+}
+
+img {
+  max-width: 100%;
+}
+
+a.primary-btn:hover {
+  transform: scale(0.9);
+  box-shadow: none;
+}
+
+a.primary-btn {
+  transition: 0.3s;
+}
+
+.navbar-nav a:hover {
+  color: #A70FCB;
+}
+
+a.bordered-btn {
+  border: 2px solid #B20CCE;
+  display: inline-block;
+  padding: 18px 30px;
+  border-radius: 15px;
+  color: #fff;
+}
+
+a.bordered-btn:hover {
+  background-color: #C209E7;
+}
+
+
+@media (min-width: 1366px) {
+    
+}
+
+@media (min-width: 1440px) {
+   .container {
+      max-width: 1360px;
+   }
+}
+
+.etherum-bg {
+  padding: 14px 20px!important;
+}
+
+.etherum-bg h2 {
+  line-height: 1.8;
+}
